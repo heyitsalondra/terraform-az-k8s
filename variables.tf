@@ -7,7 +7,7 @@ variable "" {
 */
 
 #general
-variable "pocsubid" {
+variable "sub_id" {
     description = "az  subscription id"
     type        = string
     default     = ""
@@ -19,6 +19,12 @@ variable "location" {
     default     = ""
 }
 
+variable "resource_group_name" {
+    description = "(Required) Specifies the Resource Group where the Managed Kubernetes Cluster should exist. Changing this forces a new resource to be created."
+    type        = string
+    default     = ""
+}
+
 #rg
 variable "name_rg" {
     description = ""
@@ -26,23 +32,11 @@ variable "name_rg" {
     default     = ""
 }
 
-#aks
-variable "name_aks" {
+#aksc
+variable "name_aksc" {
     description = "(Required) The name of the Managed Kubernetes Cluster to create. Changing this forces a new resource to be created."
     type        = string
     #default     = ""
-}
-
-variable "location" {
-    description = "(Required) The location where the Managed Kubernetes Cluster should be created. Changing this forces a new resource to be created."
-    type        = string
-    default     = ""
-}
-
-variable "resource_group_name" {
-    description = "(Required) Specifies the Resource Group where the Managed Kubernetes Cluster should exist. Changing this forces a new resource to be created."
-    type        = string
-    default     = ""
 }
 
 variable "default_node_pool" {
@@ -75,6 +69,12 @@ variable "max_count" {
     default     = "1"
 }
 
+variable "dns_prefix" {
+    description = "(Optional) DNS prefix specified when creating the managed cluster. Possible values must begin and end with a letter or number, contain only letters, numbers, and hyphens and be between 1 and 54 characters in length. Changing this forces a new resource to be created."
+    type        = string
+    default     = ""
+}
+
 variable "vm_size" {
     description = "(Optional) The size of the Virtual Machine, such as Standard_DS2_v2. temporary_name_for_rotation must be specified when attempting a resize."
     type        = string
@@ -84,18 +84,6 @@ variable "vm_size" {
 #acr
 variable "name_acr" {
     description = "(Required) Specifies the name of the Container Registry. Only Alphanumeric characters allowed. Changing this forces a new resource to be created."
-    type        = string
-    default     = ""
-}
-
-variable "resource_group_name" {
-    description = "(Required) The name of the resource group in which to create the Container Registry. Changing this forces a new resource to be created."
-    type        = string
-    default     = ""
-}
-
-variable "location" {
-    description = " (Required) Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
     type        = string
     default     = ""
 }

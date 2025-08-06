@@ -2,4 +2,4 @@
 terraform module for k8s in azure
 
 commands:
-terraform plan -var-file="dev.tfvars"
+terraform plan -var-file="dev.tfvars" -var-file="subID.tfvars"
