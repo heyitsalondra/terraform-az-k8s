@@ -27,6 +27,6 @@ variable "location" {
 variable "sku" {
     description = "(Required) The SKU name of the container registry. Possible values are Basic, Standard and Premium."
     type        = string
-    default     = ""
+    default     = "Basic"
 }
  
