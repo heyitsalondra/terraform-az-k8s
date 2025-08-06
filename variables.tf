@@ -12,8 +12,14 @@ variable "poclocation" {
     default     = ""
 }
 
-variable "" {
+variable "pocrgname" {
     description = ""
+    type        = string
+    default     = ""
+}
+
+variable "pocsubid" {
+    description = "az  subscription id"
     type        = string
     default     = ""
 }
